@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8" />
+        <title>SignUp</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/Ali Mustafa/imgAM/lulogo-removebg-preview.png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  
+        <link rel="stylesheet" href="/Ali Mustafa/cssAM/newloginnew.css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="/Ali Mustafa/jsAM/darkmode.js" defer></script>
+        <script src="/Ali Mustafa/jsAM/newlogin.js"defer></script>
+    </head>
+<body>
+    <nav class="navbar">
+        <button id="dark-mode-toggle" class="buttondark">
+          <span class="button_top">
+            <span id="mode-change">DARK MODE</span>
+          </span>
+        </button>
+    
+        <a href="home.html" class="nav-space"><img src="/Ali Mustafa/imgAM/lulogo-removebg-preview.png" alt="lol" class="img-nav"></a>
+        
+      </nav>
+    <form class="form2"  id="navigation.html" name="newform">
+        <div class="form-container">
+            <div class="form-control">
+            <label for="id" class="form-control--label">Student ID</label>
+            <!-- <ion-icon name="card-outline"></ion-icon> -->
+            <input type="text" class="form-control--input"  id="id">
+            </div>
+            <div class="form-control">
+            <label for="email" class="form-control--label">Email</label>
+            <input type="email" class="form-control--input"   id="email">
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="form-control">
+            <label for="fullname" class="form-control--label">Full Name</label>
+            <input type="text" class="form-control--input"  id="fullname">
+            </div>
+            <div class="form-control">
+            <label for="username" class="form-control--label">Username</label>
+            <input type="text" class="form-control--input"   id="username">
+            </div>
+        </div>
+        <div class="form-container" id="cont">
+            <div class="form-control">
+            <label for="pass" class="form-control--label">Password</label>
+            <input type="text" class="form-control--input"  id="pass">
+            </div>
+            <div class="form-control">
+            <label for="savepass" class="form-control--label">Save Password</label>
+            <input type="text" class="form-control--input"   id="savepass">
+            </div>
+        </div>
+        <span id="demo" class="weekpass"></span>
+        <div>
+            <button onclick="compare()" class="glow-on-hover2" type="button">SignUp</button>
+        </div>
+    </form>
+</body>

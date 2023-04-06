@@ -1,0 +1,233 @@
+:root {
+  --bg-body: #FAFAFA;
+  --light-text: #AAABB3;
+  --bold-text: #4F4E5D;
+  --white: #FFFFFF;
+  --purple: rgb(224, 139, 224);
+  --red: #D55C60;
+  --yellow: #f9b83c;
+  --blue: #0C81E4;
+  --url: url(/BCKK.png);
+  --nav-color: #121212;
+  --button_outline_color: #121212;
+  --button_radius: 0.75em;
+}
+
+.darkmode {
+  --bg-body: #121212;
+  --light-text: #AAABB3;
+  --bold-text: #FAFAFA;
+  --white: #FFFFFF;
+  --purple: rgb(224, 139, 224);
+  --red: #D55C60;
+  --yellow: #f9b83c;
+  --blue: #0C81E4;
+  --url: url(/BCKK\ \(1\).png);
+  --nav-color: #FFFFFF;
+  --button_outline_color: #FAFAFA;
+  --button_radius: 0.75em;
+}
+
+
+
+button {
+  float: right;
+  margin: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background-color: var(--bg-body);
+  color: var(--nt);
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--bg-body);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: var(--bg-body);
+  position: fixed;
+  box-shadow: 0 5px 20px #83a6d288;
+  top: 0;
+  width: 100%;
+  
+}
+
+.navbar a:not(.nav-space) {
+  float: left;
+  display: block;
+  color: var(--nav-color);
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.nav-space {
+  margin: 0;
+  float: left;
+}
+
+.img-nav {
+  position: absolute;
+  height: auto;
+  margin-top: -3px;
+  margin-left: 0px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 45px;
+  margin: 5px;
+}
+
+
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--light-text);
+  background-color: var(--bg-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  /*background-image: var(--url);*/
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+.header {
+  text-align: center;
+  margin: 8rem .9rem 2.5rem .9rem;
+
+}
+
+.header__title {
+  font-size: 1.5rem;
+  color: var(--bold-text);
+  margin: 0;
+}
+
+.header__subtitle {
+  font-size: 1rem;
+  color: var(--light-text);
+  font-weight: 600;
+  margin-top: .8rem;
+}
+
+
+
+
+.cards a {
+  text-decoration: none;
+  font-size: 1.5ems;
+}
+.cards a:hover {
+  color: var(--light-text);
+}
+
+
+.cards {
+  display: grid;
+  margin-bottom: 5rem;
+}
+
+.card {
+  width: 300px;
+  height: 230px;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #83a6d288;
+  position: relative;
+}
+
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+/* use before after for upper lines */
+.card--purple::before {
+  background-color: var(--purple);
+}
+
+.card--red::before {
+  background-color: var(--red);
+}
+
+.card--yellow::before {
+  background-color: var(--yellow);
+}
+
+.card--blue::before {
+  background-color: var(--blue);
+}
+
+.card__title {
+  font-weight: bold;
+  color: var(--bold-text);
+}
+
+.card__text {
+  color: var(--light-text);
+  font-size: 1.1rem;
+}
+
+/* use after to load icons */
+.card:first-child::after {
+  --icon: url(/Mansour/images/grades.svg);
+}
+
+.card:nth-child(2)::after {
+  --icon: url(/Mansour/images/schedule-svgrepo-com.svg);
+}
+
+.card:nth-child(3)::after {
+  --icon: url(/Mansour/images/account-avatar-profile-user-svgrepo-com.svg);
+}
+
+.card:last-child::after {
+  --icon: url(/Mansour/images/book-shelf-books-education-learning-school-study-svgrepo-com.svg);
+}
+
+/* use icons */
+.card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: 100%;
+  height: 200px;
+  background-image: var(--icon);
+  background-repeat: no-repeat;
+  background-position: 90% bottom;
+}
+

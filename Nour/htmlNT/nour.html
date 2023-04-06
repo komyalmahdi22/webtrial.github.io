@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+  <head>
+    <link rel="stylesheet" href="/Nour/cssNT/nour.css">  
+    <link rel="icon" type="image/png" sizes="32x32" href="/Mansour/images/lulogo-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <script src="/Nour/jsNT/nour.js" type="module" defer></script>
+    <script src="/Mansour/jsMM/darkmode.js" defer></script>
+    <script src="/Mansour/jsMM/accounts.js" type="module" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <title>Marks</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <button 
+        id="dark-mode-toggle" 
+        class="dark-mode-toggle"
+        >
+        <span class="button_top">
+          <span id="mode-change">DARK MODE</span>
+        </span>
+      </button>
+  
+      <a href="home.html" class="nav-space"><img src="/Mansour/images/lulogo-removebg-preview.png" alt="lol" class="img-nav"></a>
+      <a href="#" class="first-link">Home</a>
+      <a href="#">Marks</a>
+      <a href="#">Lectures</a>
+      <a href="#">Schedule</a>
+      <a href="#">Account</a>
+    </nav>
+
+    <main>
+      <div class="wrapper"> 
+        <form >
+          <input type="text" id="myInput" onkeyup="myFunction()" type="search" placeholder="Search for subject code.."  title="Type in subject code..">
+        </form>
+      <table border="2" id="myTable" >
+        <caption><h1>Semester Three Marks </h1>
+        </caption>
+        <thead >
+          <tr >               
+            <th>Code</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th class="hide">Attendance (5%)</th>
+            <th class="hide">Class Assigments (5%)</th>
+            <th colspan="2" class="hide">Quizes 1&2 (20%)</th>              
+            <th class="hide">Labs (5%)</th>
+            <th class="hide">Partials (20%)</th>
+            <th class="hide">Finals (40%)</th>
+            <th class="hide">Presentations (5%)</th>
+            <th colspan="3"  >Total Marks (100%) <span class="plus" id="plus" onclick=" toggleColumns()">+</span> </th>
+          </tr>
+          <style>
+            .plus {
+              cursor: pointer;
+              font-size: 30px;
+            }
+          </style>
+          <script>
+              
+          function toggleColumns() {
+          var cells = document.querySelectorAll("#myTable td, #myTable th");
+          var plus = document.getElementById('plus');
+          for (var i = 0; i < cells.length; i++) {
+            if (cells[i].classList.contains("hide")) {
+              cells[i].style.display = cells[i].style.display === "none" ? "table-cell" : "none";
+              plus.innerHTML = cells[i].style.display === "none" ? "+" : "-";
+            }
+          }
+          
+
+        }
+          </script>
+        </thead>
+        <tbody>
+          <tr>  
+            <td>I2204</td>
+            <td>Imperative Programming</td>
+            <td>5</td>
+            <td>Failed</td>
+            <td>12/2/2023</td>
+            <td class="hide">0</td>
+            <td class="hide">0</td>
+            <td class="hide">0</td>
+            <td class="hide">2</td>
+            <td class="hide">3</td>
+            <td class="hide">0</td>
+            <td class="hide">0</td>
+            <td class="hide">4</td>
+            <td>10</td>
+            <td>F</td>
+          </tr>         
+          <tr>  
+            <td>I2201</td>
+            <td>Web Development</td>
+            <td>4</td>
+            <td>Passed</td>
+            <td >12/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">6</td>
+            <td class="hide">7</td>
+            <td class="hide">4</td>
+            <td class="hide">16</td>
+            <td class="hide">33</td>
+            <td class="hide">5</td>
+            <td>81</td>
+            <td>B</td>
+          </tr>                                
+          <tr>
+            <td>I2202</td>
+            <td>Computer Organization</td>
+            <td>4</td>
+            <td>Passed</td>
+            <td>13/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">7</td>
+            <td class="hide">9</td>
+            <td class="hide">5</td>
+            <td class="hide">13</td>
+            <td class="hide">30</td>
+            <td class="hide">5</td>
+            <td>79</td>
+            <td>B-</td>
+          </tr>
+          <tr> 
+            <td>I2203</td>
+            <td>Operating System</td>
+            <td>4</td>
+            <td>Passed</td>
+            <td>13/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">4</td>
+            <td class="hide">10</td>
+            <td class="hide">9</td>
+            <td class="hide">3</td>
+            <td class="hide">16</td>
+            <td class="hide">33</td>
+            <td class="hide">3</td>
+            <td >84</td>
+            <td>B+</td>
+          </tr>       
+          <tr>  
+            <td>S2250</td>
+            <td>Statistics</td>
+            <td>4</td>
+            <td >Passed</td>
+            <td >14/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">10</td>
+            <td  rowspan="4"  style="background-color: var(--dark-purple); color: var(--white); font-weight:bold; " class="hide"> No Lab </td>
+            <td class="hide">15</td>
+            <td class="hide">40</td>
+            <td class="hide">5</td>
+            <td>90</td>
+            <td>A</td>
+          </tr>      
+          <tr> 
+            <td>I2205</td>
+            <td>Graphs</td>
+            <td>3</td>
+            <td>Passed</td>
+            <td >15/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">9</td>
+            <td class="hide">9</td>
+            <td class="hide">17</td>
+            <td class="hide">20</td>
+            <td class="hide">1</td>
+            <td>67</td>
+            <td>C</td>
+          </tr>  
+          <tr> 
+            <td>I2231</td>
+            <td>Operating Research</td>
+            <td>3</td>
+            <td >Failed</td> 
+            <td>15/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide" >5</td>
+            <td class="hide">0</td>
+            <td class="hide">0</td>
+            <td class="hide">5</td>
+            <td class="hide">4</td>
+            <td>24</td>
+            <td>F</td>  
+          </tr>      
+          <tr>  
+            <td>M2250</td>
+            <td>Arithmetics in Z</td>
+            <td>3</td>
+            <td>Passed</td>
+            <td>15/2/2023</td>
+            <td class="hide">5</td>
+            <td class="hide">5</td>
+            <td class="hide">8</td>
+            <td class="hide">9</td>
+            <td class="hide">9</td>
+            <td class="hide">40</td>
+            <td class="hide">5</td>
+            <td>87</td>
+            <td>A-</td> 
+          </tr>     
+        </tbody> 
+      </table>
+    </div>
+    <div><p class="p"></p></div>
+        
+
+    </main>
+    <footer class="footer">
+      
+      <ul class="social-icon">
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a></li>
+        <li class="social-icon__item"><a class="social-icon__link" href="#">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </a></li>
+      </ul>
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+        <li class="menu__item"><a href="mailto:mft60247@gmail.com" class="email-link">lu56574@gmail.com</a> </li>
+  
+      </ul>
+      <p>&copy;2023  | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>

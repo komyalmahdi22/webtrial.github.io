@@ -1,0 +1,418 @@
+:root {
+  --bg-body: #FAFAFA;
+  --light-text: #AAABB3;
+  --bold-text: #4F4E5D;
+  --white: #FFFFFF;
+  --nav-color: #121212; 
+  --button_outline_color: #121212;
+  --button_radius: 0.75em;
+  }  
+  .darkmode{
+  --bg-body: #121212 ;
+  --light-text: #AAABB3;
+  --bold-text: #FAFAFA;
+  --white: #FFFFFF;
+  --nav-color:#FFFFFF ;
+  --button_outline_color:#FAFAFA ;
+  --button_radius: 0.75em;
+  }
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color:var(--bg-body);/*background color variable (white or dark due to mode)*/
+    height: 100vh;/*100% of my browser height*/
+    display: flex;
+    align-items: center;
+    justify-content: center;/*browser distributes space between and around 
+    content items along the main-axis of a flex container(only in display flex type)*/
+}
+
+.form{  /*class for the box of log In page */
+    position: relative;/* relative to its normal position */
+    background-color: var(--bg-body);/* variable color to background due to mode(light - dark) */
+    padding: 2em;/* space between inner content and its border, 2em 2*current padding */
+    border-radius: 10px;/* look at the angle shape of the box */
+    box-shadow: 0 5px 20px #83a6d288;/* box shadow */
+    display: flex;
+    flex-direction: column;/* columns display */
+    gap: 1em;/* gap between elements */
+    width: 25em;/* width of box */
+    height: 26em;/* height of the box */
+}
+
+.form2{  /*class for the box of Sign Up page */
+    position: relative;/* relative to its normal position */
+    background-color:var(--bg-body);/* variable color to background due to mode(light - dark) */
+    padding: 2em;/* space between inner content and its border, 2em 2*current padding */
+    border-radius: 10px;/* look at the angle shape of the box */
+    box-shadow: 0  5px 20px #83a6d288;
+    display: flex;
+    flex-direction: column;/* columns display */
+    gap: 1em;/* gap between elements */
+    width: 35em;/* width of box */
+    /*padding-bottom: 1em;*/
+    /*height: 410px;*/
+    height: 470px;/* height of the box */
+
+}
+
+input{
+    border: 0;/*border width of inputs */
+    border-radius: 7px;
+    outline: none;/* no  outline around the border */
+    font-family: 'Poppins';
+    background: transparent;/* transparent bg of input boxes */
+    height: 35px;
+    padding: 10px;
+    color: var(--light-text);/* also variable color for text for dark and light modes */
+  }
+
+.form-container{
+    background: var(--light-gray);/* also variable color for bg for dark and light modes */
+    padding: 1em;/* padding up and down and right and left 1em */
+    border-radius: 0.7rem;/* rem is the root element's font-size */
+    display: flex;
+    align-items: center;
+    gap: 0.8em;/* gap between elements */
+    border:0.16em solid transparent;/* border with size type and color */
+}
+
+
+.form-container:hover{
+    border-color: var(--bold-text);/* when hovering on boxes border lights variable colors according to mode */
+}
+
+
+.form-container ion-icon{
+    color: var(--night);/* color of icons also variable */
+}
+
+.form-control{
+    border-radius: 0.7rem;/* rem is the root element's font-size */
+    border:0.16em solid transparent;/* border with size type and color */
+    display: flex;
+    flex-direction: column;/* columns display */
+}
+
+.form-control--label{
+    font-weight: 500;/* sets how thick or thin characters in text should be displayed(500 == medium) */ 
+    color: var(--light-text);/* color of text is varible */
+}
+
+.form-control--label:hover{
+    color: var(--nav-color);/* change color of label(username or password or ...)when hovering on it */
+}
+
+.form-control--input{
+    font-weight: 600;/* (600 == semi bold) */
+    font-size: 1.18em;/* size of text */
+}
+
+.form-check{
+    display: flex;
+    align-items: center;/* items are centered */
+    gap: 0.5rem;/* gap between elements */
+    font-weight: bold;/* bold or 700 */
+    color: var(--light-text);/* variable color of text */ 
+}
+
+.form-check input{
+    accent-color: var(--nav-color);/* color of check in checkbox which changes with changing mode*/
+    width: 1.2em;
+    height: 1.2em;
+}
+
+
+.glow-on-hover {  /* class for button in log In page */
+    width: 300px; /* width of log In button */
+    height: 50px; /* height of log In button */
+    border: none; /* no border */
+    outline: none;/* no outline */
+    color: #fff;/* color of text in button is white */
+    background: #111;/* bg color of button is black */
+    cursor: pointer;/* look at cursor when you hover over button */
+    position: relative;/* position relative to its original position not parent,& remain in doc flow */
+    z-index: 0;/* elements without an explicit z-index reside (no overlapping elements on each other)*/
+    border-radius: 10px;
+    margin-top: 1.5em;/* space btw element and out space from top*/
+    margin-left: 1.5em;/* ...... from left */
+    bottom: 0em;/* affects the vertical position of a positioned element.
+     This property has no effect on non-positioned elements. */
+}
+
+
+.glow-on-hover:before {
+    content: '';/* to exit element of before */
+    background:linear-gradient(45deg,#0000ff,#0000e1,#0000c4,#0000a8,#00008c,#0000a8,#0000c4,#0000e1,#0000ff);
+    position: absolute;
+    top: -2px;/* position of glowing when hovering on the button */
+    left:-2px;/* same */
+    background-size: 400%;/*size of bg glowing while clicking on the Log In Button  */
+    z-index: -1;/* while glowing log in word stay appeared */
+    filter: blur(5px);/* glowing type */
+    width: calc(100% + 4px);/*glowing place around the button */
+    height: calc(100% + 4px);/* glowing place around the button */
+    animation: glowing 20s linear infinite;
+    opacity: 0;/* The element is fully transparent (invisible) */
+    /*transition: opacity .3s ease-in-out;
+    border-radius: 10px;*/
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;/* bg transparent while you are clicking the button during glowing */
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;/* Opacity is the degree to which content behind an element is hidden,
+     and is the opposite of transparency */
+}
+
+.glow-on-hover:after {
+    z-index: -1;/* place of button behind log in word */
+    content: '';/* existence */
+    position: absolute;
+    width: 100%;/* size of button */
+    height: 100%;/* same as above */
+    background: #000;/* bg of the button */
+    left: 0;/* no left */
+    top: 0;/* no right */
+    border-radius: 10px;/* look at border corners */ 
+}
+
+.glow-on-hover2 {
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-top: 2em;
+     bottom: 1em; 
+}
+
+.glow-on-hover2:before {
+    content: '';
+    background:linear-gradient(45deg,#0000ff,#0000e1,#0000c4,#0000a8,#00008c,#0000a8,#0000c4,#0000e1,#0000ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover2:active {
+    color: #000
+}
+
+.glow-on-hover2:active:after {
+    background: transparent;
+}
+
+.glow-on-hover2:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing { /* animation named glowing which glow from background position */
+    0% { background-position: 0 0; } /* start from */
+    50% { background-position: 400% 0; } /* at middle */
+    100% { background-position: 0 0; } /* end with */ 
+}
+
+.account{ /* class for dont have an account sentence */
+    font-family:'Poppins';
+    font-style: italic;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+.signup{ /* class for small signup (a href)  */
+    font-family:'Poppins';
+    font-style: italic;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--bold-text);
+}
+
+.margin{ /* for div that contains sign up sentence and log in button */
+    margin-bottom: 2em;
+    margin-top: 0.5em;
+}
+
+/* .button{
+    background-color: #00ffd5;
+    display: inline-flex;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+} */
+
+/* .button:hover{
+    background-color: #002bff;
+}
+
+.button:active{
+    background-color: darkblue;
+} */
+
+.shake2{  /* for week pass */
+    animation: shake1 1s cubic-bezier(.36,.07,.19,.97) /* both */;
+    /*transform: translate3d(0, 0, 0);*/
+    border: 0.16em solid rgb(246, 97, 4);
+}
+
+.shake3{  /* for short or tall pass */
+    animation: shake1 1s cubic-bezier(.36,.07,.19,.97) /* both */;
+    /*transform: translate3d(0, 0, 0);*/
+    border: 0.16em solid yellow;
+}
+
+.shake{ /* for empty pass or not equal pass during saving new pass */
+    animation: shake1 1s cubic-bezier(.36,.07,.19,.97) /* both */;
+    /*transform: translate3d(0, 0, 0);*/
+    border: 0.16em solid red;
+}
+
+
+@keyframes shake1 { /*specifying from when to when shake done and how */ 
+    10%, 90% { 
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+.eye{ /* class for pass eye */
+    position: absolute;
+    color: var(--bold-text);
+    transform: translate(0,-50%);/* pass dots become smaller */
+    top: 50%; /* place of eye icon */
+    bottom: 40%;
+    left: 340px;
+    cursor: pointer;/* look at mouse cursor while hovering on the eye */
+}
+
+.login{ /* class for logIn word in button */
+    font-weight: bold;
+    color: var(--light-text);
+    font-size: 1.5em;
+}
+
+.iconcard{ /* class for icons */
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.weekpass{ /* class for the sentence of week or short pass or .... */ 
+    color: red;
+    font-weight: bold;
+}
+
+
+/****************************   nav of mansour */
+
+
+.buttondark {
+    float: right;
+    margin: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background-color: var(--bg-body);
+    color: var(--nt);
+  }
+  
+  .button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--bg-body);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: var(--bg-body);
+    position: fixed;
+    box-shadow:0 5px 20px #83a6d288;
+    top: 0;
+    width: 100%;
+    
+  }
+  .navbar a:not(.nav-space){
+    float: left;
+    display: block;
+    color: var(--nav-color);
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  
+  .nav-space {
+    margin: 0;
+    float: left;
+  }
+  .img-nav {
+    position: absolute;
+    height: auto;
+    margin-top: -3px;
+    margin-left: 0px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 45px;
+    margin: 5px;
+  }
+
+/*****************************/

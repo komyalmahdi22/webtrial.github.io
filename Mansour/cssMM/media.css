@@ -1,0 +1,47 @@
+@media screen and (min-width: 1200px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header__title {
+    font-size: 2rem;
+  }
+
+  .header__text {
+    width: 533px;
+  }
+  
+  .cards {
+    justify-content: center;
+    grid-template-columns: repeat(3, 350px);
+    grid-template-rows: repeat(2, 250px);
+    gap: 30px;
+  }
+
+  .cards a {
+    text-decoration: none;
+    font-size: 1.5em;
+
+  }
+
+  .card {
+    margin-bottom: 0;
+  }
+
+  .card:first-child,
+  .card:last-child {
+    margin-top: 150px;
+  }
+
+  .card:nth-child(3) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
